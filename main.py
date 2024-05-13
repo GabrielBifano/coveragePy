@@ -1,6 +1,3 @@
-from itertools import lru_cache
-
-@lru_cache(maxsize = None)
 def fibonacci(n):
     if n < 0: raise ValueError(f'Fibonacci parameter must be greater than 0. Value received: {n}')
 
