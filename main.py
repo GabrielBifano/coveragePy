@@ -11,7 +11,6 @@ def salute(hour, name):
     if hour < 0 or hour >= 24:
         raise ValueError(f'\'hour\' parameter must be >= 0 and < 24')
     
-
     if hour < 12:
         return f'Good Morning, {name}!'
     if hour < 18:
@@ -27,3 +26,17 @@ def isDuck(quacks, fly, swim, walk):
     elif swim and walk:
         return 'Steve, for sure'
     else: return 'Have no idea'
+
+def evaluateTemperature(temp, unit): 
+    if unit == "F":
+        temp = (temp - 32) * 5/9
+    if temp < 0:
+        return 'Freezing'
+    elif temp < 10:
+        return 'Very Cold'
+    elif temp < 20:
+        return 'Cold'
+    elif temp < 30:
+        return 'Warm'
+    else:
+        return 'Hot'

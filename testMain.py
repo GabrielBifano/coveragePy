@@ -1,5 +1,5 @@
 import unittest
-from main import fibonacci, salute, isDuck
+from main import fibonacci, salute, isDuck, evaluateTemperature
 
 class TestFibonacci(unittest.TestCase):
   def test_fibonnaci_with_negative_value(self):
@@ -57,6 +57,24 @@ class TestIsDuck(unittest.TestCase):
   def test_have_no_idea(self):
     self.assertEqual(isDuck(False, False, False, False), 'Have no idea')
 
+class TestEvaluateTemperature(unittest.TestCase):
+  def test_evaluate_temperature_freezing(self):
+    self.assertEqual(evaluateTemperature(-1, "C"), "Freezing")
+
+  def test_evaluate_temperature_very_cold(self):
+    self.assertEqual(evaluateTemperature(5, "C"), "Very Cold")
+
+  def test_evaluate_temperature_cold(self):
+    self.assertEqual(evaluateTemperature(15, "C"), "Cold")
+
+  def test_evaluate_temperature_warm(self):
+    self.assertEqual(evaluateTemperature(25, "C"), "Warm")
+
+  def test_evaluate_temperature_hot(self):
+    self.assertEqual(evaluateTemperature(35, "C"), "Hot")
+
+  # def test_evaluate_temperature_with_failure(self):
+  #   self.assertEqual(evaluateTemperature(35, "C"), "Very Cold")
 
 if __name__ == "__main__":
   unittest.main()
